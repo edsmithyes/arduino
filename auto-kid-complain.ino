@@ -22,7 +22,7 @@ void generateComplaint() {
     message = "Dad!";
     }
 
-  // Randomly select the beautiful child who allegedly perpetrated this awful injustice
+  // Select the beautiful child who allegedly perpetrated this awful injustice
   int person;
   person=random(1,5);
   switch (person) {
@@ -43,7 +43,7 @@ void generateComplaint() {
     break;
   }
     
-  // Randomly determine the action of the offender
+  // Determine the action of the offender
   int action;
   action=random(1,21);
   switch (action){
@@ -112,7 +112,7 @@ void generateComplaint() {
     break;
   }
     
-  // Randomly pick the location where this atrocity took place
+  // Pick the location where this atrocity took place
   int location;
   location=random(1,16);
   switch (location){
@@ -169,11 +169,13 @@ void generateComplaint() {
     break;
   }
 
-  Serial.println(message); 
+  //Show the accusation in the serial monitor window for funsies
+  Serial.println(message);
   
   // Add empty characters to end of message
   message = message + "                ";
-  
+
+  //Count how long the message is
   strLength = message.length();
 
 }
@@ -189,6 +191,7 @@ void setup() {
   // set up the LCD's number of columns and rows: 
   lcd.begin(16, 1);
 
+  // let the bitching begin!
   generateComplaint();
   
 }
@@ -207,9 +210,9 @@ void loop() {
   // We have to reset ii after there is less text displayed.
   if(ii>(strLength-16)) {
     ii = 0;
+    //That was fun, let's hear another complaint!
     generateComplaint();
   }
 
   delay(500);
 }
-
