@@ -22,7 +22,7 @@ void generateComplaint() {
     message = "Dad!";
     }
 
-  // Randomly select the beautiful child submitting this description of injustice
+  // Randomly select the beautiful child who allegedly perpetrated this awful injustice
   int person;
   person=random(1,5);
   switch (person) {
