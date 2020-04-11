@@ -10,15 +10,9 @@ int ii = 0;
 int strLength;
 String toShow;
 
-void setup() {
-
-  //initialize random seed
-  randomSeed(analogRead(0));
-
-  // set up the LCD's number of columns and rows: 
-  lcd.begin(16, 1);
-
-  // Mom or Dad
+void generateComplaint() {
+  
+  // Randomly choose whether Mom or Dad are the fortunate recipients of this urgent complaint
   int momordad;
   momordad=random(2);
   if (momordad==1){
@@ -28,19 +22,30 @@ void setup() {
     message = "Dad!";
     }
 
-  // Miette or Mozie
-  int morm;
-  morm=random(2);
-  if (morm==1){
+  // Randomly select the beautiful child submitting this description of injustice
+  int person;
+  person=random(1,5);
+  switch (person) {
+    case 1:
     message = message + " Mozie just ";
-    }
-  else {
-    message = message + " Miette just ";
-    }
-
-  // Action
+    break;
+    case 2:
+    message = message + " Miette just ";  
+    break;
+    case 3:
+    message = message + " Jackson just ";  
+    break;
+    case 4:
+    message = message + " Joel just ";  
+    break;
+    case 5:
+    message = message + " Lottie just ";  
+    break;
+  }
+    
+  // Randomly determine the action of the offender
   int action;
-  action=random(1,17);
+  action=random(1,21);
   switch (action){
     case 1:
     message = message + "hit me ";
@@ -67,7 +72,7 @@ void setup() {
     message = message + "made a mess ";
     break;
     case 9:
-    message = message + "left her stuff out ";
+    message = message + "left stuff out ";
     break;
     case 10:
     message = message + "called me stupid ";
@@ -88,15 +93,26 @@ void setup() {
     message = message + "got dirty ";
     break;
     case 16:
-    message = message + "didn't clean up her dog's pee ";
+    message = message + "left dog pee ";
     break;
     case 17:
-    message = message + "didn't clean up her dog's poop ";
+    message = message + "left dog poop ";
+    break;
+    case 18:
+    message = message + "kept getting in my way ";
+    break;
+    case 19:
+    message = message + "took my iPhone ";
+    break;
+    case 20:
+    message = message + "told me to shut up ";
+    break;
+    case 21:
+    message = message + "farted ";
     break;
   }
-  
-  
-  // Location
+    
+  // Randomly pick the location where this atrocity took place
   int location;
   location=random(1,16);
   switch (location){
@@ -116,7 +132,7 @@ void setup() {
     message = message + "in my bedroom!";
     break;
     case 6:
-    message = message + "in her bedroom!";
+    message = message + "in their bedroom!";
     break;
     case 7:
     message = message + "in your bedroom!";
@@ -148,13 +164,33 @@ void setup() {
     case 16:
     message = message + "in the field!";
     break;
+    case 17:
+    message = message + "in the bathroom!";
+    break;
   }
+
+  Serial.println(message); 
   
   // Add empty characters to end of message
   message = message + "                ";
   
   strLength = message.length();
-    
+
+}
+
+
+void setup() {
+
+  Serial.begin(9600);
+
+  //initialize random seed
+  randomSeed(analogRead(0));
+
+  // set up the LCD's number of columns and rows: 
+  lcd.begin(16, 1);
+
+  generateComplaint();
+  
 }
 
 void loop() {
@@ -171,6 +207,7 @@ void loop() {
   // We have to reset ii after there is less text displayed.
   if(ii>(strLength-16)) {
     ii = 0;
+    generateComplaint();
   }
 
   delay(500);
