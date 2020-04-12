@@ -11,56 +11,113 @@ int strLength;
 String toShow;
 
 void generateComplaint() {
+  String gender = "   ";
+
   
   // Randomly choose whether Mom or Dad are the fortunate recipients of this urgent complaint
   int momordad;
   momordad=random(2);
   if (momordad==1){
-    message = "Mom!";
+    message = "Mom,";
     }
   else {
-    message = "Dad!";
+    message = "Dad,";
     }
 
   // Select the beautiful child who allegedly perpetrated this awful injustice
-  int person;
-  person=random(1,5);
+  int person; 
+  person=random(1,6);
   switch (person) {
     case 1:
-    message = message + " Mozie just ";
+    message = message + " Mozie ";
+    gender = "her";
     break;
     case 2:
-    message = message + " Miette just ";  
+    message = message + " Miette ";  
+    gender = "her";
     break;
     case 3:
-    message = message + " Jackson just ";  
+    message = message + " Jackson ";  
+    gender = "his";
     break;
     case 4:
-    message = message + " Joel just ";  
+    message = message + " Joel ";  
+    gender = "his";
     break;
     case 5:
-    message = message + " Lottie just ";  
+    message = message + " Lottie ";  
+    gender = "her";
     break;
   }
-    
-  // Determine the action of the offender
-  int action;
-  action=random(1,21);
-  switch (action){
+
+  //Determine the body part of the victim (if applicable)
+  int randbodypart;
+  String bodypart = "";
+  randbodypart=random(1,12);
+  switch (randbodypart){
     case 1:
-    message = message + "hit me ";
+    bodypart = "head ";
     break;
     case 2:
-    message = message + "kicked me ";
+    bodypart = "leg ";
+    break;
+    case 3:
+    bodypart = "toe ";
+    break;
+    case 4:
+    bodypart = "ear ";
+    break;
+    case 5: 
+    bodypart = "butt ";
+    break;
+    case 6:
+    bodypart = "nose ";
+    break;
+    case 7:
+    bodypart = "finger ";
+    break;
+    case 8:
+    bodypart = "arm ";
+    break;
+    case 9:
+    bodypart = "ankle ";
+    break;
+    case 10:
+    bodypart = "knuckle ";
+    break;
+    case 11:
+    bodypart = "tongue ";
+    break;
+    case 12:
+    bodypart = "eye ";
+    break;
+    case 13:
+    bodypart = "hand ";
+    break;
+    case 14:
+    bodypart = "elbow ";
+    break;
+  }
+
+  
+  // Determine the action of the offender
+  int action;
+  action=random(1,36);
+  switch (action){
+    case 1:
+    message = message + "hit my " + bodypart;
+    break;
+    case 2:
+    message = message + "kicked my " + bodypart;
     break;
     case 3:
     message = message + "swore at me ";
     break;
     case 4:
-    message = message + "spit on me ";
+    message = message + "spit on my " + bodypart;
     break;
     case 5:
-    message = message + "slapped me ";
+    message = message + "slapped my " + bodypart;
     break;
     case 6:
     message = message + "made faces at me ";
@@ -72,7 +129,7 @@ void generateComplaint() {
     message = message + "made a mess ";
     break;
     case 9:
-    message = message + "left stuff out ";
+    message = message + "left "+gender+" stuff out ";
     break;
     case 10:
     message = message + "called me stupid ";
@@ -84,25 +141,25 @@ void generateComplaint() {
     message = message + "got in my way ";
     break;
     case 13:
-    message = message + "pinched me ";
+    message = message + "pinched my " + bodypart;
     break;
     case 14:
-    message = message + "punched me ";
+    message = message + "punched my " + bodypart;
     break;
     case 15:
-    message = message + "got dirty ";
+    message = message + "left a mess ";
     break;
     case 16:
-    message = message + "left dog pee ";
+    message = message + "let the dog pee ";
     break;
     case 17:
-    message = message + "left dog poop ";
+    message = message + "let the dog poop ";
     break;
     case 18:
     message = message + "kept getting in my way ";
     break;
     case 19:
-    message = message + "took my iPhone ";
+    message = message + "won't let me use my phone ";
     break;
     case 20:
     message = message + "told me to shut up ";
@@ -110,11 +167,56 @@ void generateComplaint() {
     case 21:
     message = message + "farted ";
     break;
+    case 22:
+    message = message + "called me a stupid head ";
+    break;
+    case 23:
+    message = message + "said butthole ";
+    break;
+    case 24:
+    message = message + "won't clean the litterbox because it's ";
+    break;
+    case 25:
+    message = message + "ripped up my picture ";
+    break;
+    case 26:
+    message = message + "threw my dog ";
+    break;
+    case 27:
+    message = message + "bit my " + bodypart;
+    break;
+    case 28:
+    message = message + "spilled water ";
+    break;
+    case 29:
+    message = message + "is using your phone ";
+    break;
+    case 30:
+    message = message + "barfed ";
+    break;
+    case 31:
+    message = message + "coughed on me ";
+    break;
+    case 32:
+    message = message + "sneezed on my " + bodypart;
+    break;
+    case 33:
+    message = message + "watched the movie without me ";
+    break;
+    case 34:
+    message = message + "touched me ";
+    break;
+    case 35:
+    message = message + "ate all my candy ";
+    break;
+    case 36:
+    message = message + "sold all my stuff ";
+    break;
   }
     
   // Pick the location where this atrocity took place
   int location;
-  location=random(1,16);
+  location=random(1,22);
   switch (location){
     case 1:
     message = message + "in the living room!";
@@ -126,13 +228,13 @@ void generateComplaint() {
     message = message + "in the dining room!";
     break;
     case 4:
-    message = message + "in the kitchen!";
+    message = message + "in the pantry!";
     break;
     case 5:
     message = message + "in my bedroom!";
     break;
     case 6:
-    message = message + "in their bedroom!";
+    message = message + "in "+gender+" bedroom!";
     break;
     case 7:
     message = message + "in your bedroom!";
@@ -147,7 +249,7 @@ void generateComplaint() {
     message = message + "on the trampoline!";
     break;
     case 11:
-    message = message + "outside!";
+    message = message + "in the yard!";
     break;
     case 12:
     message = message + "in the street!";
@@ -166,6 +268,21 @@ void generateComplaint() {
     break;
     case 17:
     message = message + "in the bathroom!";
+    break;
+    case 18:
+    message = message + "on the roof!";
+    break;
+    case 19:
+    message = message + "in the tree!";
+    break;
+    case 20:
+    message = message + "in the bathtub!";
+    break;
+    case 21:
+    message = message + "in a hole!";
+    break;
+    case 22:
+    message = message + "in the neighbor's yard!";
     break;
   }
 
@@ -214,5 +331,5 @@ void loop() {
     generateComplaint();
   }
 
-  delay(500);
+  delay(100);
 }
