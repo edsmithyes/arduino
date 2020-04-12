@@ -305,8 +305,8 @@ void generateComplaint() {
   //Show the complete accusation in the serial monitor window for funsies
   Serial.println(message);
   
-  // Add empty characters to end of message
-  message = message + "                ";
+  // Add empty characters to the beginning and end of message
+  message = "                " + message + "                ";
 
   //Count how long the message is
   strLength = message.length();
@@ -346,5 +346,5 @@ void loop() {
     generateComplaint();
   }
 
-  delay(100);
+  delay(400);
 }
