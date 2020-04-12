@@ -12,7 +12,7 @@ String toShow;
 
 void generateComplaint() {
    
-  // Randomly decide whether Mom or Dad will be the unfortunate recipients of this urgent and necessary complaint
+  // Randomly decide whether Mom or Dad will be the unfortunate recipient of this urgent and necessary complaint
   int momordad;
   momordad=random(2);
   if (momordad==1){
@@ -22,7 +22,7 @@ void generateComplaint() {
     message = "Dad,";
     }
 
-  // Name the child who allegedly perpetrated this awful injustice
+  // Name and assume the gender of the child who allegedly perpetrated this awful injustice
   int person; 
   String gender = "   ";
   person=random(1,6);
