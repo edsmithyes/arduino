@@ -11,10 +11,8 @@ int strLength;
 String toShow;
 
 void generateComplaint() {
-  String gender = "   ";
-
-  
-  // Randomly choose whether Mom or Dad are the fortunate recipients of this urgent complaint
+   
+  // Randomly decide whether Mom or Dad will be the unfortunate recipients of this urgent and necessary complaint
   int momordad;
   momordad=random(2);
   if (momordad==1){
@@ -24,8 +22,9 @@ void generateComplaint() {
     message = "Dad,";
     }
 
-  // Select the beautiful child who allegedly perpetrated this awful injustice
+  // Name the child who allegedly perpetrated this awful injustice
   int person; 
+  String gender = "   ";
   person=random(1,6);
   switch (person) {
     case 1:
@@ -50,7 +49,7 @@ void generateComplaint() {
     break;
   }
 
-  //Determine the body part of the victim (if applicable)
+  // Identify the victim's afflicted body part (if applicable)
   int randbodypart;
   String bodypart = "";
   randbodypart=random(1,12);
@@ -98,9 +97,8 @@ void generateComplaint() {
     bodypart = "elbow ";
     break;
   }
-
   
-  // Determine the action of the offender
+  // Document the offender's vicious action
   int action;
   action=random(1,39);
   switch (action){
@@ -229,7 +227,7 @@ void generateComplaint() {
     break;
   }
     
-  // Pick the location where this atrocity took place
+  // Determine the location where this atrocity took place
   int location;
   location=random(1,22);
   switch (location){
@@ -301,7 +299,7 @@ void generateComplaint() {
     break;
   }
 
-  //Show the accusation in the serial monitor window for funsies
+  //Show the complete accusation in the serial monitor window for funsies
   Serial.println(message);
   
   // Add empty characters to end of message
@@ -311,7 +309,6 @@ void generateComplaint() {
   strLength = message.length();
 
 }
-
 
 void setup() {
 
