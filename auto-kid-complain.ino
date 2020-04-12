@@ -98,9 +98,9 @@ void generateComplaint() {
     break;
   }
   
-  // Document the offender's vicious action
+  // Document the offender's vicious actions
   int action;
-  action=random(1,39);
+  action=random(1,42);
   switch (action){
     case 1:
     message = message + "hit my " + bodypart;
@@ -224,6 +224,9 @@ void generateComplaint() {
     break;
     case 41:
     message = message + "won't let me play Nintendo Switch ";
+    break;
+    case 42:
+    message = message + "fell asleep ";
     break;
   }
     
