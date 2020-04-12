@@ -68,7 +68,7 @@ void generateComplaint() {
     bodypart = "ear ";
     break;
     case 5: 
-    bodypart = "butt ";
+    bodypart = "back ";
     break;
     case 6:
     bodypart = "nose ";
@@ -102,7 +102,7 @@ void generateComplaint() {
   
   // Determine the action of the offender
   int action;
-  action=random(1,36);
+  action=random(1,39);
   switch (action){
     case 1:
     message = message + "hit my " + bodypart;
@@ -123,7 +123,7 @@ void generateComplaint() {
     message = message + "made faces at me ";
     break;
     case 7:
-    message = message + "let the dogs out ";
+    message = message + "let the dogs ";
     break;
     case 8:
     message = message + "made a mess ";
@@ -171,7 +171,7 @@ void generateComplaint() {
     message = message + "called me a stupid head ";
     break;
     case 23:
-    message = message + "said butthole ";
+    message = message + "said a bad word ";
     break;
     case 24:
     message = message + "won't clean the litterbox because it's ";
@@ -192,10 +192,10 @@ void generateComplaint() {
     message = message + "is using your phone ";
     break;
     case 30:
-    message = message + "barfed ";
+    message = message + "just barfed ";
     break;
     case 31:
-    message = message + "coughed on me ";
+    message = message + "coughed on my " + bodypart;
     break;
     case 32:
     message = message + "sneezed on my " + bodypart;
@@ -204,13 +204,28 @@ void generateComplaint() {
     message = message + "watched the movie without me ";
     break;
     case 34:
-    message = message + "touched me ";
+    message = message + "was dancing ";
     break;
     case 35:
-    message = message + "ate all my candy ";
+    message = message + "ate all the candy ";
     break;
     case 36:
-    message = message + "sold all my stuff ";
+    message = message + "threw away all the stuff ";
+    break;
+    case 37:
+    message = message + "won't let me play ";
+    break;
+    case 38:
+    message = message + "hid the remote ";
+    break;
+    case 39:
+    message = message + "put all the trash ";
+    break;
+    case 40:
+    message = message + "was eating ";
+    break;
+    case 41:
+    message = message + "won't let me play Nintendo Switch ";
     break;
   }
     
@@ -240,7 +255,7 @@ void generateComplaint() {
     message = message + "in your bedroom!";
     break;
     case 8:
-    message = message + "upstairs!";
+    message = message + "in the car!";
     break;
     case 9:
     message = message + "in the dog room!";
